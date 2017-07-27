@@ -1,0 +1,9 @@
+# 指定hikari连接池
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+    org.springframework.web: DEBUG
