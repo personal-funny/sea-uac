@@ -1,11 +1,10 @@
-package com.sea.web.sso.startclass;
+package com.sea.web.uac.startclass;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.ComponentScans;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.ImportResource;
 
 /**
  * Start Class.
@@ -13,11 +12,12 @@ import org.springframework.context.annotation.ImportResource;
  * Created by chris on 17-2-25.
  */
 @Configuration
-@ComponentScan("com.sea.web.moon")
+@ComponentScan("com.sea.web.uac")
+@MapperScan("com.sea.web.uac.dao")
 @EnableAutoConfiguration
 public class Application {
   public static void main(String[] args) throws Exception {
     SpringApplication.run(Application.class, args);
-    System.out.println("Vip business started ... ... OK");
+    System.out.println("UAC started ... ... OK");
   }
 }

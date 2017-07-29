@@ -70,7 +70,7 @@ fi
 
 echo -e "Starting the $SERVER_NAME ...\c"
 nohup $JAVA_HOME/bin/java $JAVA_OPTS $JAVA_E_OPTS $JAVA_DEBUG_OPTS $JAVA_JX_OPTS -classpath \
-    $CONF_DIR:$LIB_JARS com.jingoal.web.vip.startclass.Application > $STDOUT_FILE 2>&1 &
+    $CONF_DIR:$LIB_JARS com.sea.web.uac.startclass.Application > $STDOUT_FILE 2>&1 &
 
 COUNT=0
 
