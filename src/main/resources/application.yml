@@ -1,9 +1,48 @@
-# 指定hikari连接池
-spring:
-  datasource:
-    type: com.zaxxer.hikari.HikariDataSource
-
 logging:
   level:
     org.springframework.security: DEBUG
     org.springframework.web: DEBUG
+
+spring:
+  profiles:
+    active: dev
+
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: org.mariadb.jdbc.Driver
+    username: dev
+    password: 123456
+    hikari:
+      maxLifetime: 1765000 #一个连接的生命时长（毫秒），超时而且没被使用则被释放（retired），缺省:30分钟，建议设置比数据库超时时长少30秒以上
+      maximumPoolSize: 15 #连接池中允许的最大连接数。缺省值：10；推荐的公式：((core_count * 2) + effective_spindle_count)
+      pool-name: pool-lxl
+      connectionTestQuery: SELECT 1
+      maximum-pool-size: 50
+      minimum-idle: 10
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+#  config-locations: classpath:com/sea/web/uac/mapper/SqlMapperConfig.xml
+#  mapper-locations: classpath:com/sea/web/uac/mapper/SqlMap_*.xml
+#  type-aliases-package: com.sea.web.uac.modal
+
+---
+# 开发环境配置
+spring:
+  profiles: dev
+  datasource:
+    url: jdbc:mysql://ubuntu:3306/test?autoReconnect=true&amp;useUnicode=true&amp;zeroDateTimeBehavior=convertToNull&amp;characterEncoding=utf-8&amp;mysqlEncoding=utf8
+
+---
+# 测试环境配置
+spring:
+  profiles: test
+  datasource:
+    url: jdbc:mysql://ubuntu:3306/test?autoReconnect=true&amp;useUnicode=true&amp;zeroDateTimeBehavior=convertToNull&amp;characterEncoding=utf-8&amp;mysqlEncoding=utf8
+
+---
+# 生产环境配置
+spring:
+  profiles: prod
+  datasource:
+    url: jdbc:mysql://ubuntu:3306/test?autoReconnect=true&amp;useUnicode=true&amp;zeroDateTimeBehavior=convertToNull&amp;characterEncoding=utf-8&amp;mysqlEncoding=utf8
