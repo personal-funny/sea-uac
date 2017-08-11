@@ -3,12 +3,8 @@ logging:
     org.springframework.security: DEBUG
     org.springframework.web: DEBUG
 
-spring:
-  profiles:
-    active: dev
-
 app:
-  name: tc-flight-airlines-jwt
+  name: sea-uac
   user_cookie: c_user
 
 jwt:
@@ -16,6 +12,10 @@ jwt:
   expires_in: 600 # 10 minutes
   secret: queenvictoria
   cookie: AUTH-TOKEN
+
+spring:
+  profiles:
+    active: dev
 
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
@@ -32,9 +32,6 @@ jwt:
 mybatis:
   configuration:
     map-underscore-to-camel-case: true
-#  config-locations: classpath:com/sea/web/uac/mapper/SqlMapperConfig.xml
-#  mapper-locations: classpath:com/sea/web/uac/mapper/SqlMap_*.xml
-#  type-aliases-package: com.sea.web.uac.modal
 
 ---
 # 开发环境配置

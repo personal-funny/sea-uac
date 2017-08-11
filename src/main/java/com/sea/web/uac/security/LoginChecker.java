@@ -1,9 +1,9 @@
 package com.sea.web.uac.security;
 
 import com.sea.web.uac.modal.User;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import javax.servlet.http.HttpServletRequest;
@@ -13,7 +13,6 @@ import javax.servlet.http.HttpServletResponse;
  * @author lx48475
  * @version Id: LoginChecker.java, v 0.1 2017年08月09 10:34 lx48475 Exp $
  */
-@Component
 public class LoginChecker extends HandlerInterceptorAdapter {
 
     @Autowired

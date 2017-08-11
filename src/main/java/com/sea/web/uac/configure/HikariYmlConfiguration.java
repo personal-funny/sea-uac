@@ -5,13 +5,14 @@ import com.zaxxer.hikari.HikariDataSource;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
 import javax.sql.DataSource;
 
 /**
  * Created by chris on 17-7-28.
  */
-//@Configuration
+@Configuration
 public class HikariYmlConfiguration {
   @Value("${spring.datasource.hikari.pool-name}")
   private String poolName;
