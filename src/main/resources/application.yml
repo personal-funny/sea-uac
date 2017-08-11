@@ -7,6 +7,16 @@ spring:
   profiles:
     active: dev
 
+app:
+  name: tc-flight-airlines-jwt
+  user_cookie: c_user
+
+jwt:
+  header: Authorization
+  expires_in: 600 # 10 minutes
+  secret: queenvictoria
+  cookie: AUTH-TOKEN
+
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: org.mariadb.jdbc.Driver
